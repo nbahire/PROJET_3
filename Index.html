@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/all.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>Service de réservation de vélos</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="dist/MarkerCluster.css">
+    <link rel="stylesheet" href="dist/MarkerCluster.Default.css">
+    <script src="dist/leaflet.markercluster-src.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#slider-section"><img src="images/logo.png" alt="logo de la page"></a>
+        </div>
+        <ul id="header_menu">
+            <li><a href="#slider-section">Acceuil</a></li>
+            <li><a href="#reserv-section">Réservation</a></li>
+            <li><a href="#credit-footer">Contact</a></li>
+        </ul>
+    </header>
+    <section id="slider-section">
+        <h1><span>TOULOUSE-VELO</span> : DES VELOS POUR VOUS PARTOUT!</h1>
+        <div class="slider">
+            <!-- boutons -->
+            <div id="fas-butons">
+                <i class="fas fa-chevron-left"></i>
+                <div class="play-pause">
+                    <i class="fas far fa-pause-circle"></i>
+                    <i class="fas far fa-play-circle"></i>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <!-- slides -->
+            <div id="slides">
+                <img class="slide slide_active" src="images/RESERVER_VELOS_1.jpg" alt="Détails réservation_1">
+                <img class="slide" src="images/RESERVER_VELOS_2.jpg" alt="Détails réservation_2">
+                <img class="slide" src="images/RESERVER_VELOS_3.jpg" alt="Détails réservation_3">
+                <img class="slide" src="images/RESERVER_VELOS_4.jpg" alt="Détails réservation_4">
+                <img class="slide" src="images/RESERVER_VELOS_5.jpg" alt="Détails réservation_5">
+            </div>
+        </div>
+    </section>
+
+    <section id="reserv-section">
+        <h2>Réservation</h2>
+        <div id="container">
+            <div id="mapid"></div>
+            <fieldset id="reservation">
+                <legend>Détails de la station</legend>
+                <div class=" inside-container">
+                    <p id="station_name"></p>
+                    <p id="station_address"></p>
+                    <p id="station_emplacement"></p>
+                    <p id="station_dispo"></p>
+                    <p id="status">Veuillez selectionner une station</p>
+                    <button class="btn btn-reserv">Réserver</button>
+                </div>
+                <div class="canvas-container">
+                    <p>Veuillez indiquer votre nom et prenom:</p>
+                    <input name="lastname" id="name" placeholder="Votre nom" type="text">
+                    <input name="firstname" id="first_name" placeholder="Votre prenom" type="text"><br />
+                    <p>Votre signature:</p>
+                    <canvas id="canvas"></canvas><br />
+                    <button class="btn btn-cancel">Annuler</button>
+                    <button class="btn btn-clear">Effacer</button>
+                    <button class="btn btn-confirm">Confirmer</button>
+                </div>
+            </fieldset>
+        </div>
+        <p id="reserv_count"></p>
+    </section>
+
+
+
+    <footer id="credit-footer">
+        <div class="credits-logo">
+            <img src="images/logo.png" alt="logo de la page">
+        </div>
+        <div class="credits-contact">
+            <p>Contact:</p>
+            <p>20 rue du poid souple kaiten</p>
+            <p>555-435-097</p>
+            <p>toulouse-velo@contact.fr</p><br />
+        </div>
+    </footer>
+    <script src="GetAjaxJson.js"></script>
+    <script src="MySlider.js"></script>
+    <script src="MyMap.js"></script>
+    <script src="Mytimer.js"></script>
+    <script src="MyMain.js"></script>
+    <script src="Mycanvas.js"></script>
+
+</body>
+
+</html>
